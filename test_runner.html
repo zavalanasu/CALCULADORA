@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Unit Tests</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        #results { list-style-type: none; padding: 0; }
+        #results li { margin-bottom: 5px; padding: 8px; border-radius: 3px; }
+        #results li.pass { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        #results li.fail { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        #summary { margin-top: 20px; font-weight: bold; }
+        .log-details { font-size: 0.9em; margin-left: 20px; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>Calculator Unit Tests</h1>
+
+    <!-- Calculator's required DOM elements -->
+    <input type="text" id="display" readonly style="display: none;">
+    <ul id="history-list" style="display: none;"></ul>
+
+    <ul id="results"></ul>
+    <div id="summary"></div>
+
+    <!-- Include Calculator Script -->
+    <script src="script.js"></script>
+    <!-- Include Test Script -->
+    <script src="tests.js"></script>
+</body>
+</html>

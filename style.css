@@ -1,0 +1,159 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Added a professional font */
+}
+
+.calculator {
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Slightly more rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+    background-color: #e9e9e9; /* Lightened background for the calculator */
+    width: 340px; /* Adjusted width for new buttons */
+    max-width: 100%; /* Ensure it doesn't overflow small screens */
+}
+
+.display {
+    width: 100%;
+    height: 60px; /* Increased height */
+    margin-bottom: 15px; /* Increased margin */
+    text-align: right;
+    font-size: 2em; /* Increased font size */
+    padding: 10px; /* Increased padding */
+    box-sizing: border-box;
+    border: 1px solid #bbb; /* Slightly darker border */
+    border-radius: 5px;
+    background-color: #fdfdfd; /* Off-white display background */
+    color: #333; /* Darker text for better readability */
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.buttons button {
+    padding: 18px; /* Slightly reduced padding to fit more buttons */
+    font-size: 1.2em;
+    border: 1px solid #ddd;
+    border-radius: 5px; /* More rounded buttons */
+    cursor: pointer;
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease; /* Smooth transition for hover */
+}
+
+.buttons button:hover {
+    background-color: #e0e0e0; /* Darker hover effect */
+}
+
+.buttons button:active { /* Style for active/clicked state */
+    background-color: #d0d0d0;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+}
+
+.operator {
+    background-color: #ff9800; /* Orange for operators */
+    color: white;
+}
+.operator:hover {
+    background-color: #e68900;
+}
+
+.memory {
+    background-color: #2196F3; /* Blue for memory buttons */
+    color: white;
+}
+.memory:hover {
+    background-color: #1e88e5;
+}
+
+.scientific {
+    background-color: #673AB7; /* Purple for scientific buttons */
+    color: white;
+}
+.scientific:hover {
+    background-color: #5e35b1;
+}
+.scientific sup { /* Ensure superscript in button is styled well */
+    font-size: 0.6em;
+}
+
+.equals {
+    background-color: #4CAF50; /* Green for equals */
+    color: white;
+    /* grid-column is now set inline for '0' and not needed here for equals if it takes 1 column */
+}
+.equals:hover {
+    background-color: #45a049;
+}
+
+.clear {
+    background-color: #f44336; /* Red for clear */
+    color: white;
+}
+.clear:hover {
+    background-color: #e53935;
+}
+
+/* History Styling */
+.history-container {
+    width: 340px; /* Match calculator width */
+    max-width: 100%;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+}
+.history-container h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2em;
+    text-align: center;
+}
+#history-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px; /* Limit height and allow scrolling */
+    overflow-y: auto;
+    font-size: 0.9em;
+    color: #555;
+}
+#history-list li {
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+    text-align: right; /* Align history entries to the right */
+}
+#history-list li:last-child {
+    border-bottom: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 360px) { /* Adjusted breakpoint */
+    .calculator {
+        width: 100%; /* Full width on very small screens */
+        padding: 10px;
+        border-radius: 0; /* Optional: full-width might not need rounding */
+    }
+    .display {
+        height: 50px;
+        font-size: 1.8em;
+    }
+    .buttons button {
+        padding: 15px; /* Maintain decent button size */
+        font-size: 1em;
+    }
+    .history-container {
+        width: 100%;
+        border-radius: 0;
+    }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="display" id="display" readonly>
+        <div class="buttons">
+            <!-- Row 1: Memory and Clear -->
+            <button class="memory" onclick="memoryClear()">MC</button>
+            <button class="memory" onclick="memoryRecall()">MR</button>
+            <button class="memory" onclick="memoryAdd()">M+</button>
+            <button class="memory" onclick="memorySubtract()">M-</button>
+
+            <!-- Row 2: Scientific and Clear/Ops -->
+            <button class="scientific" onclick="calculateScientific('sqrt')">√</button>
+            <button class="scientific" onclick="calculateScientific('power')">x<sup>y</sup></button> <!-- Will need special handling for y -->
+            <button class="scientific" onclick="calculateScientific('sin')">sin</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            
+            <!-- Row 3: Numbers and Ops -->
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button class="operator" onclick="appendToDisplay('/')">/</button>
+
+            <!-- Row 4: Numbers and Ops -->
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button class="operator" onclick="appendToDisplay('*')">*</button>
+
+            <!-- Row 5: Numbers and Ops -->
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button class="operator" onclick="appendToDisplay('-')">-</button>
+
+            <!-- Row 6: Zero, Decimal, Equals, Plus -->
+            <button onclick="appendToDisplay('0')" style="grid-column: span 2;">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button class="equals" onclick="calculateResult()">=</button>
+            <button class="operator" onclick="appendToDisplay('+')">+</button>
+        </div>
+    </div>
+    <div class="history-container">
+        <h3>Calculation History</h3>
+        <ul id="history-list">
+            <!-- History items will be populated by JavaScript -->
+        </ul>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
